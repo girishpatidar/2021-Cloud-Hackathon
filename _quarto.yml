@@ -1,31 +1,44 @@
-project:
-  type: site
-  output-dir: _site
+project: 
+  type: website
 
-execute:
-  freeze: true
-
-site:
+website:
+  page-navigation: true  
+  title: "2021 Cloud Hackathon"
   site-url: https://nasa-openscapes.github.io/2021-Cloud-Hackathon
+  
   repo-url: https://github.com/nasa-openscapes/2021-Cloud-Hackathon
   repo-actions: [edit, issue]
-  page-navigation: true
+  
+  page-footer: "PODAAC, NSIDC DAAC and LPDAAC (2021). 2021 Cloud Hackathon" 
+ 
+  # navbar: 
+  #   background: light
+  #   right: 
+  #     - sidebar:welcome
+  #     - icon: github
+  #       href: https://github.com/nasa-openscapes/2021-Cloud-Hackathon
+ 
   sidebar:
-    title: "2021 Cloud Hackathon"
     logo: https://user-images.githubusercontent.com/2915555/133525653-2a2278b1-1015-4350-b2a5-160d125aaaf7.png
-    style: "docked"
-    background: light
-    search: true
-    collapse-level: 1
-    align: left
-    tools:
+    pinned: true
+    align: center
+    tools: 
+      - icon: globe
+        href: https://nasa-openscapes.github.io
+        text: "NASA-Openscapes website"
       - icon: github
         href: https://github.com/nasa-openscapes/2021-Cloud-Hackathon
+        text: "2021 Cloud Hackathon repo"
+    
+    style: "docked"
+    search: true
+    collapse-level: 1
     contents:
       - section: "Welcome"
         contents:
-         - index.md
-         - cloud-paradigm.md
+          - index.md
+          - cloud-paradigm.md
+          - team.md
       - section: "Logistics"
         contents:
           - logistics/index.md
@@ -62,12 +75,7 @@ site:
           - clinic/notebooks.md
           - clinic/github.md
           - clinic/earthdata.md
- 
-  footer: "PODAAC, NSIDC DAAC and LPDAAC (2021). 2021 Cloud Hackathon"
 
-filters:
-  - include-files.lua
-  
 format:
   html:
     theme:
@@ -77,3 +85,7 @@ format:
     code-copy: true
     css: styles.css
     toc: true
+
+filters:
+  - include-files.lua
+  - quarto
